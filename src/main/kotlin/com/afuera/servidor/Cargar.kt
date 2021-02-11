@@ -12,10 +12,18 @@ class Cargar {
     }
 
     @Bean
-    fun initDatabase(studentRepository : CountriesRepository) : CommandLineRunner {
+    fun initDatabase(CountriesRepository : CountriesRepository) : CommandLineRunner {
         return CommandLineRunner { args: Array<String?>? ->
-            logger.info("Preloading " + studentRepository.save(Country("Paquito", "Chocolatero")))
-            logger.info("Preloading " + studentRepository.save(Country("Paqita", "Salas")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Afghanistan", "AF")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Åland Islands", "AX")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Albania", "AL")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Algeria", "DZ")))
+            logger.info("Preloading " + CountriesRepository.save(Country("American Samoa", "AS")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Wallis and Futuna", "WF")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Western Sahara", "Western Sahara")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Yemen", "YE")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Zambia", "ZM")))
+            logger.info("Preloading " + CountriesRepository.save(Country("Zimbabwe", "ZW")))
         }
 
     }
