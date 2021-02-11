@@ -8,5 +8,4 @@ class ServidorApplication
 
 fun main(args: Array<String>) {
 	runApplication<ServidorApplication>(*args)
-	println("Hola spring")
 }

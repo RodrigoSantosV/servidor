@@ -4,31 +4,32 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-class CountryController(private val CountriesRepository: CountriesRepository) {
+class CountryController(private val countriesRepository: CountriesRepository) {
 
     @GetMapping("/countries")
     fun getAllCountries() : List<Country> {
-        return CountriesRepository.findAll()
+        return countriesRepository.findAll()
     }
 
     @GetMapping("/countCountries")
     fun getCount() : Long {
-        return CountriesRepository.count()
+        return countriesRepository.count()
     }
 
     @PostMapping("/country")
     fun insertCountry(@RequestBody student : Country){
-        CountriesRepository.save(student)
+        countriesRepository.save(student)
     }
 
     @GetMapping("/country/{id}")
     fun getCountry(@PathVariable id : Long) : Country {
-        return CountriesRepository.findById(id).get()
+        Cargar.logger.info("Se ha recibido un un $id")
+        return countriesRepository.findById(id).get()
     }
 
     @DeleteMapping("/country/{id}")
     fun deleteCountry(@PathVariable id : Long){
-        CountriesRepository.deleteById(id)
+        countriesRepository.deleteById(id)
     }
 
 
